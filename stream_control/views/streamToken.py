@@ -10,7 +10,7 @@ from rest_framework.permissions import (
 )
 
 from stream_control.serializers import StreamTokenSerializer
-from stream_control.models import StreamTokenUser
+from stream_control.models import StreamTokenUser , UserStream
 from stream_control.utils import get_tokenrtc
 
 # Create your views here.
@@ -60,8 +60,15 @@ class StreamTokenViewSet(
             appID, appCertificate, request.data["channel_name"], id_user,
             request.data["rol_user"], expireTimeInSeconds, currentTimestamp, privilegeExpiredTs
         )
+
+        stream = StreamTokenUser.objects.create(
+            channel_name=request.data["channel_name"],
+        )
+
+
         data = {
             "tokenRTC": token_rtc,
             "uid": id_user
         }
         return Response(data, status=status.HTTP_201_CREATED)
+
