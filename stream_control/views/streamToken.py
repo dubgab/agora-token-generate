@@ -49,9 +49,10 @@ class StreamTokenViewSet(
     def generate_token(self, request):
         """
             Roles users
-            0 =
-            1 =
-            2 =
+            0 = Publisher(Host) default
+            1 = Publisher(Host)
+            2 = Subscriber(Audience)
+            101 = Admin Publisher(Host)
         """
 
         id_user = int(datetime.now().timestamp())

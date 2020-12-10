@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 from .AccessToken import *
 
-Role_Attendee = 1 # depreated, same as publisher
+Role_Attendee = 0 # depreated, same as publisher
 Role_Publisher = 1 # for live broadcaster
 Role_Subscriber = 2 # default, for live audience
 Role_Admin = 101 # deprecated, same as publisher
