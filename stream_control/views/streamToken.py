@@ -61,7 +61,7 @@ class StreamTokenViewSet(
             request.data["rol_user"], expireTimeInSeconds, currentTimestamp, privilegeExpiredTs
         )
 
-        stream = StreamTokenUser.objects.create(
+        stream = StreamTokenUser.objects.get_or_create(
             channel_name=request.data["channel_name"],
         )
 

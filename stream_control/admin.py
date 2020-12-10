@@ -20,6 +20,6 @@ class UserStreamdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'name_user',
-        'uidd',
+        'uuid',
     )
     list_filter = ('id','name_user')
